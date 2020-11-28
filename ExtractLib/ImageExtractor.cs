@@ -6,7 +6,6 @@ namespace ExtractLib
 {
     public class ImageExtractor
     {
-        private byte[] rawData = new byte[8];
         private byte[] tmpBuf = new byte[4];
         private byte[] paletteData = new byte[256 * 4];
 
@@ -14,6 +13,7 @@ namespace ExtractLib
         {
             int width = forcedWidth;
             int height = forcedHeight;
+            byte[] rawData = new byte[8];
             using(System.IO.FileStream file = new System.IO.FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
                 file.Seek(0, SeekOrigin.End);
